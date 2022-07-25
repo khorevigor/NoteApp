@@ -8,6 +8,8 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.findNavController
+import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes.NotesScreen
 import com.plcoding.cleanarchitecturenoteapp.ui.theme.CleanArchitectureNoteAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +17,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CleanArchitectureNoteAppTheme {
-                
             }
         }
     }
