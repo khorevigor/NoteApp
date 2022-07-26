@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.model.Note
-import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes.components.TransparentHintTextField
+import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -94,9 +94,11 @@ fun AddEditNoteScreen(
                             .clip(CircleShape)
                             .background(color)
                             .border(
-                                width = 3.dp, color = if (viewModel.noteColor.value == colorInt) {
+                                width = 3.dp,
+                                color = if (viewModel.noteColor.value == colorInt) {
                                     Color.Black
-                                } else Color.Transparent
+                                } else Color.Transparent,
+                                shape = CircleShape
                             )
                             .clickable {
                                 scope.launch {
@@ -136,7 +138,7 @@ fun AddEditNoteScreen(
                 onFocusChange = {
                     viewModel.onEvent(AddEditNoteEvent.ChangeContentFocus(it))
                 },
-                isHintVisible = titleState.isHintVisible,
+                isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
                 modifier = Modifier.fillMaxHeight()
             )

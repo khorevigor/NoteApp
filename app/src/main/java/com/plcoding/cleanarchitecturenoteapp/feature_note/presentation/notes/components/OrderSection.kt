@@ -14,10 +14,10 @@ fun OrderSection(
     onOrderChange: (NoteOrder) -> Unit
 ) {
     Column(
-        modifier = modifier,
+        modifier = modifier
     ) {
         Row(
-            modifier = modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
             DefaultRadioButton(
                 text = "Title",
@@ -39,7 +39,7 @@ fun OrderSection(
         }
         Spacer(modifier = Modifier.height(16.dp))
         Row(
-            modifier = modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
             DefaultRadioButton(
                 text = "Ascending",

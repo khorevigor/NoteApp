@@ -1,4 +1,4 @@
-package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes.components
+package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,7 +25,11 @@ fun TransparentHintTextField(
     Box(
         modifier = modifier
     ) {
-        BasicTextField(value = text, onValueChange = onValueChange, singleLine = isSingleLine,
+        BasicTextField(
+            value = text,
+            onValueChange = onValueChange,
+            singleLine = isSingleLine,
+            textStyle = textStyle,
             modifier = Modifier
                 .fillMaxWidth()
                 .onFocusChanged {

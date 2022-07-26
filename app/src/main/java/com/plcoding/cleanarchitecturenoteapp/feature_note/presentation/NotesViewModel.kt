@@ -41,8 +41,7 @@ class NotesViewModel @Inject constructor(
                 ) {
                     return
                 }
-
-
+                getNotes(event.noteOrder)
             }
             is NotesEvent.DeleteNote -> {
                 viewModelScope.launch {
@@ -68,7 +67,8 @@ class NotesViewModel @Inject constructor(
         getNotesJob = useCases.getNotes(noteOrder)
             .onEach { notes ->
                 _state.value = state.value.copy(
-                    notes = notes
+                    notes = notes,
+                    noteOrder = noteOrder
                 )
             }
             .launchIn(viewModelScope)
